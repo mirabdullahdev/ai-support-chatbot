@@ -1,10 +1,8 @@
-import { AnimatePresence, motion } from "framer-motion";
-import { BookOpen, CheckCircle2, ExternalLink, Inbox, Loader2, Lock, LogOut, MessageSquare, Sparkles, UserRoundPlus } from "lucide-react";
+import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
 import { NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { api, auth } from "@/lib/api";
 import type { Stats } from "@/lib/types";
@@ -34,57 +32,43 @@ function Login({ onLogin }: { onLogin: () => void }) {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/40 p-4">
-      <motion.form
-        onSubmit={submit}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-sm space-y-4 rounded-2xl border bg-card p-8 shadow-float"
-      >
-        <div className="flex size-12 items-center justify-center rounded-2xl bg-brand-gradient text-white"><Lock className="size-5" /></div>
-        <div>
-          <h1 className="text-2xl font-bold">Admin sign in</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Nova Threads support dashboard</p>
-        </div>
-        <Input type="password" placeholder="Admin password" value={password} onChange={(e) => setPassword(e.target.value)} autoFocus required />
+    <div className="flex min-h-screen items-center justify-center p-4">
+      <form onSubmit={submit} className="w-full max-w-xs space-y-4">
+        <h1 className="font-display text-4xl">Admin</h1>
+        <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} autoFocus required />
         {error && <p className="text-sm text-destructive">{error}</p>}
-        <Button type="submit" variant="gradient" className="w-full" disabled={loading}>
+        <Button type="submit" className="w-full" disabled={loading}>
           {loading && <Loader2 className="animate-spin" />} Sign in
         </Button>
-        <a href="/" className="block text-center text-xs text-muted-foreground hover:text-foreground">← Back to storefront</a>
-      </motion.form>
+        <a href="/" className="block text-sm text-muted-foreground transition-colors hover:text-foreground">Back to storefront</a>
+      </form>
     </div>
   );
 }
 
 function StatCards({ stats }: { stats: Stats | null }) {
   const items = [
-    { label: "Conversations", value: stats?.conversations, icon: MessageSquare, tone: "text-violet-600 bg-violet-100" },
-    { label: "Questions answered", value: stats?.questions_answered, icon: CheckCircle2, tone: "text-emerald-600 bg-emerald-100" },
-    { label: "Handoffs", value: stats?.handoffs, icon: UserRoundPlus, tone: "text-amber-600 bg-amber-100" },
-    { label: "Answer rate", value: stats ? `${stats.answer_rate}%` : undefined, icon: Sparkles, tone: "text-pink-600 bg-pink-100" },
+    { label: "Conversations", value: stats?.conversations },
+    { label: "Questions answered", value: stats?.questions_answered },
+    { label: "Handoffs", value: stats?.handoffs },
+    { label: "Answer rate", value: stats ? `${stats.answer_rate}%` : undefined },
   ];
   return (
-    <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-      {items.map((s, i) => (
-        <motion.div key={s.label} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}>
-          <Card className="flex items-center gap-4 p-4">
-            <span className={cn("flex size-11 shrink-0 items-center justify-center rounded-xl", s.tone)}><s.icon className="size-5" /></span>
-            <div>
-              <p className="font-display text-2xl font-bold leading-none">{s.value ?? "–"}</p>
-              <p className="mt-1 text-xs text-muted-foreground">{s.label}</p>
-            </div>
-          </Card>
-        </motion.div>
+    <dl className="grid grid-cols-2 divide-x divide-y rounded-lg border bg-card lg:grid-cols-4 lg:divide-y-0">
+      {items.map((s) => (
+        <div key={s.label} className="p-5">
+          <dt className="text-[13px] text-muted-foreground">{s.label}</dt>
+          <dd className="mt-2 font-display text-4xl leading-none">{s.value ?? "–"}</dd>
+        </div>
       ))}
-    </div>
+    </dl>
   );
 }
 
 const NAV = [
-  { to: "/admin/knowledge", label: "Knowledge Base", icon: BookOpen },
-  { to: "/admin/leads", label: "Leads", icon: Inbox },
-  { to: "/admin/conversations", label: "Conversations", icon: MessageSquare },
+  { to: "/admin/knowledge", label: "Knowledge Base" },
+  { to: "/admin/leads", label: "Leads" },
+  { to: "/admin/conversations", label: "Conversations" },
 ];
 
 function Dashboard({ onLogout }: { onLogout: () => void }) {
@@ -102,53 +86,42 @@ function Dashboard({ onLogout }: { onLogout: () => void }) {
   }, [refresh, location.pathname]);
 
   return (
-    <div className="min-h-screen bg-muted/40 lg:flex">
-      <aside className="border-b bg-card lg:sticky lg:top-0 lg:h-screen lg:w-64 lg:shrink-0 lg:border-b-0 lg:border-r">
-        <div className="flex items-center justify-between gap-2 p-4 lg:flex-col lg:items-stretch lg:p-5">
-          <div className="flex items-center gap-2.5 font-display font-bold">
-            <span className="flex size-8 items-center justify-center rounded-xl bg-brand-gradient text-white"><Sparkles className="size-4" /></span>
-            Nova Support
-          </div>
-          <nav className="flex gap-1 overflow-x-auto lg:mt-6 lg:flex-col">
+    <div className="min-h-screen lg:flex">
+      <aside className="border-b lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-60 lg:shrink-0 lg:flex-col lg:justify-between lg:border-b-0 lg:border-r">
+        <div className="flex items-center justify-between gap-4 px-5 py-4 lg:block lg:py-6">
+          <a href="/admin" className="font-display text-2xl leading-none">Nova Threads</a>
+          <nav className="flex gap-1 overflow-x-auto lg:mt-8 lg:flex-col">
             {NAV.map((n) => (
               <NavLink
                 key={n.to}
                 to={n.to}
                 className={({ isActive }) =>
                   cn(
-                    "flex items-center gap-2.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition",
-                    isActive ? "bg-secondary text-primary" : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                    "whitespace-nowrap rounded-md px-3 py-2 text-sm transition-colors",
+                    isActive ? "bg-secondary font-medium text-foreground" : "text-muted-foreground hover:text-foreground",
                   )
                 }
               >
-                <n.icon className="size-4" /> {n.label}
+                {n.label}
               </NavLink>
             ))}
           </nav>
         </div>
-        <div className="hidden space-y-1 p-4 lg:absolute lg:bottom-0 lg:block lg:w-64">
-          <a href="/" className="flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground">
-            <ExternalLink className="size-4" /> View storefront
-          </a>
-          <button onClick={onLogout} className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground">
-            <LogOut className="size-4" /> Sign out
-          </button>
+        <div className="hidden space-y-1 px-5 py-6 text-sm text-muted-foreground lg:block">
+          <a href="/" className="block py-1 transition-colors hover:text-foreground">View storefront</a>
+          <button onClick={onLogout} className="block py-1 transition-colors hover:text-foreground">Sign out</button>
         </div>
       </aside>
 
-      <main className="min-w-0 flex-1 space-y-6 p-4 sm:p-6 lg:p-8">
+      <main className="min-w-0 flex-1 space-y-6 p-5 lg:p-10">
         <StatCards stats={stats} />
-        <AnimatePresence mode="wait">
-          <motion.div key={location.pathname} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}>
-            <Routes>
-              <Route path="knowledge" element={<KnowledgeBase />} />
-              <Route path="leads" element={<Leads />} />
-              <Route path="conversations" element={<Conversations />} />
-              <Route path="*" element={<Navigate to="/admin/knowledge" replace />} />
-            </Routes>
-          </motion.div>
-        </AnimatePresence>
-        <button onClick={onLogout} className="flex items-center gap-2 text-sm text-muted-foreground lg:hidden"><LogOut className="size-4" /> Sign out</button>
+        <Routes>
+          <Route path="knowledge" element={<KnowledgeBase />} />
+          <Route path="leads" element={<Leads />} />
+          <Route path="conversations" element={<Conversations />} />
+          <Route path="*" element={<Navigate to="/admin/knowledge" replace />} />
+        </Routes>
+        <button onClick={onLogout} className="text-sm text-muted-foreground lg:hidden">Sign out</button>
       </main>
     </div>
   );

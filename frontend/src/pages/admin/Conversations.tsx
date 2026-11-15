@@ -73,7 +73,7 @@ export function Conversations() {
           {transcript.length === 0 && <p className="py-8 text-center text-sm text-muted-foreground">Select a conversation to read it.</p>}
           {transcript.map((m, i) => (
             <div key={i} className={cn("flex flex-col", m.role === "user" ? "items-end" : "items-start")}>
-              <div className={cn("max-w-[85%] rounded-2xl px-3.5 py-2 text-sm", m.role === "user" ? "bg-brand-gradient text-white" : "border bg-muted/50")}>
+              <div className={cn("max-w-[85%] rounded-lg px-3.5 py-2 text-sm", m.role === "user" ? "bg-primary text-primary-foreground" : "border bg-muted/50")}>
                 {m.content}
               </div>
               <div className="mt-1 flex items-center gap-2 text-[11px] text-muted-foreground">

@@ -44,7 +44,7 @@ export function Leads() {
               <TableRow key={l.id}>
                 <TableCell className="whitespace-nowrap">
                   <p className="font-medium">{l.name}</p>
-                  <a href={`mailto:${l.email}`} className="text-xs text-primary hover:underline">{l.email}</a>
+                  <a href={`mailto:${l.email}`} className="text-xs underline underline-offset-2 hover:opacity-70">{l.email}</a>
                 </TableCell>
                 <TableCell className="min-w-[16rem] max-w-md">{l.question}</TableCell>
                 <TableCell className="whitespace-nowrap text-muted-foreground">{formatDate(l.created_at, true)}</TableCell>

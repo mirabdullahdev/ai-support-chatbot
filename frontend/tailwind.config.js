@@ -2,9 +2,12 @@
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
-    container: { center: true, padding: "1.25rem", screens: { "2xl": "1280px" } },
+    container: { center: true, padding: "1.5rem", screens: { "2xl": "1200px" } },
     extend: {
-      fontFamily: { sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"], display: ["Sora", "Inter", "sans-serif"] },
+      fontFamily: {
+        sans: ["Geist", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ['"Instrument Serif"', "Georgia", "serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -20,14 +23,13 @@ export default {
       },
       borderRadius: { lg: "var(--radius)", md: "calc(var(--radius) - 2px)", sm: "calc(var(--radius) - 4px)" },
       boxShadow: {
-        soft: "0 1px 2px rgb(15 23 42 / 0.04), 0 8px 24px -8px rgb(15 23 42 / 0.10)",
-        float: "0 24px 60px -12px rgb(76 29 149 / 0.35), 0 8px 20px -8px rgb(15 23 42 / 0.2)",
+        soft: "0 1px 2px rgb(28 25 23 / 0.04)",
+        float: "0 20px 50px -12px rgb(28 25 23 / 0.25), 0 4px 12px -4px rgb(28 25 23 / 0.10)",
       },
       keyframes: {
-        bounceDot: { "0%, 80%, 100%": { transform: "translateY(0)", opacity: "0.4" }, "40%": { transform: "translateY(-4px)", opacity: "1" } },
-        pulseRing: { "0%": { transform: "scale(1)", opacity: "0.5" }, "100%": { transform: "scale(1.9)", opacity: "0" } },
+        bounceDot: { "0%, 80%, 100%": { opacity: "0.25" }, "40%": { opacity: "1" } },
       },
-      animation: { bounceDot: "bounceDot 1.2s infinite ease-in-out", pulseRing: "pulseRing 2.2s infinite ease-out" },
+      animation: { bounceDot: "bounceDot 1.2s infinite ease-in-out" },
     },
   },
   plugins: [],

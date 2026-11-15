@@ -3,15 +3,16 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const badgeVariants = cva("inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors", {
+/** Plain status text with a small dot: no pill, no tinted background. */
+const badgeVariants = cva("inline-flex items-center gap-1.5 text-xs font-medium before:size-1.5 before:rounded-full before:content-['']", {
   variants: {
     variant: {
-      default: "border-transparent bg-primary/10 text-primary",
-      secondary: "border-transparent bg-muted text-muted-foreground",
-      success: "border-transparent bg-emerald-100 text-emerald-700",
-      warning: "border-transparent bg-amber-100 text-amber-700",
-      info: "border-transparent bg-sky-100 text-sky-700",
-      outline: "text-foreground",
+      default: "text-foreground before:bg-foreground",
+      secondary: "text-muted-foreground before:bg-muted-foreground/60",
+      success: "text-foreground before:bg-emerald-600",
+      warning: "text-foreground before:bg-amber-500",
+      info: "text-foreground before:bg-sky-600",
+      outline: "text-foreground before:bg-foreground",
     },
   },
   defaultVariants: { variant: "default" },

@@ -127,7 +127,7 @@ export function KnowledgeBase() {
             role="status"
             className={cn(
               "flex items-center gap-2 rounded-xl border px-4 py-3 text-sm",
-              notice.tone === "success" ? "border-emerald-200 bg-emerald-50 text-emerald-800" : "border-red-200 bg-red-50 text-red-800",
+              notice.tone === "success" ? "border-border bg-card text-foreground" : "border-destructive/40 bg-card text-destructive",
             )}
           >
             {notice.tone === "success" ? <CheckCircle2 className="size-4 shrink-0" /> : <AlertTriangle className="size-4 shrink-0" />}
@@ -147,7 +147,7 @@ export function KnowledgeBase() {
             <Button variant="outline" onClick={() => fileInput.current?.click()} disabled={uploading}>
               {uploading ? <Loader2 className="animate-spin" /> : <Upload />} Upload
             </Button>
-            <Button variant="gradient" onClick={() => void runReindex()} disabled={!!progress}>
+            <Button variant="default" onClick={() => void runReindex()} disabled={!!progress}>
               <RefreshCw className={cn(progress && "animate-spin")} /> Re-index
             </Button>
           </div>
@@ -169,7 +169,7 @@ export function KnowledgeBase() {
           onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
           onDragLeave={() => setDragging(false)}
           onDrop={(e) => { e.preventDefault(); setDragging(false); void upload(e.dataTransfer.files); }}
-          className={cn("mx-5 mb-4 rounded-xl border-2 border-dashed px-4 py-5 text-center text-sm text-muted-foreground transition", dragging ? "border-primary bg-secondary" : "border-border")}
+          className={cn("mx-5 mb-4 rounded-xl border-2 border-dashed px-4 py-5 text-center text-sm text-muted-foreground transition", dragging ? "border-foreground bg-secondary" : "border-border")}
         >
           Drop <span className="font-medium text-foreground">.md</span>, <span className="font-medium text-foreground">.txt</span> or <span className="font-medium text-foreground">.pdf</span> files here to teach the bot
         </div>
@@ -189,14 +189,14 @@ export function KnowledgeBase() {
               <TableRow key={d.name}>
                 <TableCell>
                   <div className="flex items-center gap-2.5">
-                    {d.type === "json" ? <FileJson className="size-4 text-amber-600" /> : <FileText className="size-4 text-primary" />}
+                    {d.type === "json" ? <FileJson className="size-4 text-muted-foreground" /> : <FileText className="size-4 text-muted-foreground" />}
                     <div>
                       <p className="font-medium">{d.title}</p>
                       <p className="text-xs text-muted-foreground">{d.name}</p>
                     </div>
                   </div>
                 </TableCell>
-                <TableCell><Badge variant="secondary" className="uppercase">{d.type}</Badge></TableCell>
+                <TableCell><Badge variant="secondary" className="uppercase before:hidden">{d.type}</Badge></TableCell>
                 <TableCell>{d.chunks === 0 ? <Badge variant="warning">not indexed</Badge> : d.chunks}</TableCell>
                 <TableCell className="text-muted-foreground">{formatSize(d.size)}</TableCell>
                 <TableCell>
@@ -216,8 +216,8 @@ export function KnowledgeBase() {
 
       <AnimatePresence>
         {editing && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 p-4 backdrop-blur-sm">
-            <motion.div initial={{ scale: 0.96, y: 12 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.96 }} className="flex max-h-[90vh] w-full max-w-3xl flex-col rounded-2xl bg-card shadow-float">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/30 p-4">
+            <motion.div initial={{ scale: 0.96, y: 12 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.96 }} className="flex max-h-[90vh] w-full max-w-3xl flex-col rounded-lg bg-card shadow-float">
               <div className="flex items-center justify-between border-b px-5 py-4">
                 <div>
                   <h3 className="font-semibold">Edit {editing.name}</h3>
@@ -233,7 +233,7 @@ export function KnowledgeBase() {
               />
               <div className="flex justify-end gap-2 border-t px-5 py-3">
                 <Button variant="outline" onClick={() => setEditing(null)}>Cancel</Button>
-                <Button variant="gradient" onClick={() => void save()} disabled={saving}>
+                <Button variant="default" onClick={() => void save()} disabled={saving}>
                   {saving ? <Loader2 className="animate-spin" /> : <Save />} Save and index
                 </Button>
               </div>
