@@ -1,0 +1,102 @@
+[
+  {
+    "order_number": "NT-10421", "customer_name": "Ava Thompson", "email": "ava.thompson@example.com",
+    "placed_at": "2026-10-28", "status": "delivered", "total": 102.00,
+    "items": [
+      {"name": "Linen Camp Shirt", "size": "M", "color": "Natural", "quantity": 1, "price": 68.00},
+      {"name": "Everyday Heavyweight Tee", "size": "M", "color": "White", "quantity": 1, "price": 34.00}
+    ],
+    "shipping_method": "Standard", "carrier": "UPS", "tracking_number": "1Z999AA10123456784",
+    "estimated_delivery": "2026-11-03",
+    "events": [
+      {"status": "placed", "date": "2026-10-28"}, {"status": "processing", "date": "2026-10-28"},
+      {"status": "shipped", "date": "2026-10-29"}, {"status": "delivered", "date": "2026-11-02"}
+    ]
+  },
+  {
+    "order_number": "NT-10422", "customer_name": "Liam Chen", "email": "liam.chen@example.com",
+    "placed_at": "2026-10-30", "status": "delivered", "total": 98.00,
+    "items": [{"name": "Relaxed Selvedge Jeans", "size": "32", "color": "Indigo", "quantity": 1, "price": 98.00}],
+    "shipping_method": "Standard", "carrier": "USPS", "tracking_number": "9400111899223344556677",
+    "estimated_delivery": "2026-11-05",
+    "events": [
+      {"status": "placed", "date": "2026-10-30"}, {"status": "processing", "date": "2026-10-30"},
+      {"status": "shipped", "date": "2026-10-31"}, {"status": "delivered", "date": "2026-11-04"}
+    ]
+  },
+  {
+    "order_number": "NT-10423", "customer_name": "Sofia Martinez", "email": "sofia.martinez@example.com",
+    "placed_at": "2026-11-08", "status": "shipped", "total": 155.95,
+    "items": [
+      {"name": "Merino Crewneck Sweater", "size": "S", "color": "Burgundy", "quantity": 1, "price": 112.00},
+      {"name": "Merino Beanie", "size": "One size", "color": "Burgundy", "quantity": 1, "price": 29.00}
+    ],
+    "shipping_method": "Express", "carrier": "FedEx", "tracking_number": "781234567890",
+    "estimated_delivery": "2026-11-12",
+    "events": [
+      {"status": "placed", "date": "2026-11-08"}, {"status": "processing", "date": "2026-11-08"},
+      {"status": "shipped", "date": "2026-11-09"}
+    ]
+  },
+  {
+    "order_number": "NT-10424", "customer_name": "Noah Patel", "email": "noah.patel@example.com",
+    "placed_at": "2026-11-14", "status": "processing", "total": 148.00,
+    "items": [{"name": "Quilted Bomber Jacket", "size": "L", "color": "Black", "quantity": 1, "price": 148.00}],
+    "shipping_method": "Standard", "carrier": null, "tracking_number": null,
+    "estimated_delivery": "2026-11-20",
+    "events": [{"status": "placed", "date": "2026-11-14"}, {"status": "processing", "date": "2026-11-14"}]
+  },
+  {
+    "order_number": "NT-10425", "customer_name": "Emma Wilson", "email": "emma.wilson@example.com",
+    "placed_at": "2026-11-10", "status": "shipped", "total": 168.00,
+    "items": [
+      {"name": "Ribbed Knit Dress", "size": "M", "color": "Camel", "quantity": 1, "price": 96.00},
+      {"name": "Pleated Midi Skirt", "size": "M", "color": "Sage", "quantity": 1, "price": 72.00}
+    ],
+    "shipping_method": "Standard", "carrier": "UPS", "tracking_number": "1Z999AA10198765432",
+    "estimated_delivery": "2026-11-17",
+    "events": [
+      {"status": "placed", "date": "2026-11-10"}, {"status": "processing", "date": "2026-11-10"},
+      {"status": "shipped", "date": "2026-11-12"}
+    ]
+  },
+  {
+    "order_number": "NT-10426", "customer_name": "Oliver Brown", "email": "oliver.brown@example.com",
+    "placed_at": "2026-10-22", "status": "delivered", "total": 62.00,
+    "items": [
+      {"name": "Everyday Joggers", "size": "L", "color": "Heather Grey", "quantity": 1, "price": 62.00}
+    ],
+    "shipping_method": "Standard", "carrier": "USPS", "tracking_number": "9400111899778899001122",
+    "estimated_delivery": "2026-10-28",
+    "events": [
+      {"status": "placed", "date": "2026-10-22"}, {"status": "processing", "date": "2026-10-23"},
+      {"status": "shipped", "date": "2026-10-24"}, {"status": "delivered", "date": "2026-10-27"}
+    ]
+  },
+  {
+    "order_number": "NT-10427", "customer_name": "Mia Johnson", "email": "mia.johnson@example.com",
+    "placed_at": "2026-11-11", "status": "shipped", "total": 206.95,
+    "items": [
+      {"name": "Cloud Fleece Hoodie", "size": "M", "color": "Lavender", "quantity": 1, "price": 89.00},
+      {"name": "Slim Stretch Chinos", "size": "30", "color": "Navy", "quantity": 1, "price": 74.00},
+      {"name": "Merino Beanie", "size": "One size", "color": "Cream", "quantity": 1, "price": 29.00}
+    ],
+    "shipping_method": "Express", "carrier": "FedEx", "tracking_number": "781298765432",
+    "estimated_delivery": "2026-11-17",
+    "events": [
+      {"status": "placed", "date": "2026-11-11"}, {"status": "processing", "date": "2026-11-11"},
+      {"status": "shipped", "date": "2026-11-13"}
+    ]
+  },
+  {
+    "order_number": "NT-10428", "customer_name": "Lucas Garcia", "email": "lucas.garcia@example.com",
+    "placed_at": "2026-11-15", "status": "processing", "total": 82.00,
+    "items": [
+      {"name": "Everyday Heavyweight Tee", "size": "XL", "color": "Forest", "quantity": 1, "price": 34.00},
+      {"name": "Waxed Canvas Tote", "size": "One size", "color": "Tan", "quantity": 1, "price": 48.00}
+    ],
+    "shipping_method": "Standard", "carrier": null, "tracking_number": null,
+    "estimated_delivery": "2026-11-21",
+    "events": [{"status": "placed", "date": "2026-11-15"}, {"status": "processing", "date": "2026-11-15"}]
+  }
+]

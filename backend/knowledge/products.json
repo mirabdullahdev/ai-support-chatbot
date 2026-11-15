@@ -1,0 +1,110 @@
+[
+  {
+    "id": "p01", "name": "Everyday Heavyweight Tee", "category": "Tops", "price": 34,
+    "description": "A boxy, 240gsm tee that holds its shape wash after wash.",
+    "sizes": ["XS", "S", "M", "L", "XL", "XXL"], "colors": ["White", "Black", "Sand", "Forest"],
+    "materials": "100% organic cotton, 240gsm",
+    "care": "Machine wash cold with like colors. Tumble dry low. Do not bleach.",
+    "availability": "In stock in all sizes and colors.",
+    "gradient": ["#e9d5ff", "#c4b5fd"]
+  },
+  {
+    "id": "p02", "name": "Linen Camp Shirt", "category": "Tops", "price": 68,
+    "description": "A breezy short-sleeve shirt with a relaxed camp collar.",
+    "sizes": ["XS", "S", "M", "L", "XL"], "colors": ["Natural", "Sky Blue", "Olive"],
+    "materials": "100% European linen",
+    "care": "Machine wash cold on a gentle cycle. Line dry or tumble dry low. Iron on medium while slightly damp.",
+    "availability": "In stock. Olive is sold out in XS.",
+    "gradient": ["#bae6fd", "#a5b4fc"]
+  },
+  {
+    "id": "p03", "name": "Cloud Fleece Hoodie", "category": "Sweatshirts", "price": 89,
+    "description": "Our softest hoodie, brushed inside for a cloud-like feel.",
+    "sizes": ["S", "M", "L", "XL", "XXL"], "colors": ["Oatmeal", "Charcoal", "Lavender"],
+    "materials": "80% organic cotton, 20% recycled polyester fleece",
+    "care": "Machine wash cold, inside out. Tumble dry low. Do not iron the print or trims.",
+    "availability": "In stock. Lavender is low stock.",
+    "gradient": ["#ddd6fe", "#f0abfc"]
+  },
+  {
+    "id": "p04", "name": "Slim Stretch Chinos", "category": "Bottoms", "price": 74,
+    "description": "Tailored through the leg with enough stretch to move in all day.",
+    "sizes": ["28", "30", "32", "34", "36", "38"], "colors": ["Khaki", "Navy", "Stone"],
+    "materials": "97% cotton, 3% elastane twill",
+    "care": "Machine wash cold. Tumble dry low. Warm iron if needed.",
+    "availability": "In stock. This style runs slim, so we suggest sizing down if you are between sizes.",
+    "gradient": ["#fde68a", "#fdba74"]
+  },
+  {
+    "id": "p05", "name": "Relaxed Selvedge Jeans", "category": "Bottoms", "price": 98,
+    "description": "Japanese selvedge denim with a relaxed straight leg.",
+    "sizes": ["28", "30", "32", "34", "36"], "colors": ["Indigo", "Washed Black"],
+    "materials": "100% cotton selvedge denim, 12oz",
+    "care": "Wash inside out in cold water, as rarely as possible. Hang dry. Do not tumble dry.",
+    "availability": "In stock. Washed Black is sold out in size 28.",
+    "gradient": ["#93c5fd", "#6366f1"]
+  },
+  {
+    "id": "p06", "name": "Merino Crewneck Sweater", "category": "Knitwear", "price": 112,
+    "description": "A fine-gauge merino sweater that is warm without the bulk.",
+    "sizes": ["XS", "S", "M", "L", "XL"], "colors": ["Ink", "Cream", "Burgundy", "Moss"],
+    "materials": "100% extra-fine merino wool",
+    "care": "Hand wash cold or use a wool cycle. Reshape and dry flat. Do not tumble dry.",
+    "availability": "In stock in all sizes and colors.",
+    "gradient": ["#fecdd3", "#f9a8d4"]
+  },
+  {
+    "id": "p07", "name": "Quilted Bomber Jacket", "category": "Outerwear", "price": 148,
+    "description": "A lightweight quilted bomber for in-between weather.",
+    "sizes": ["S", "M", "L", "XL"], "colors": ["Black", "Olive"],
+    "materials": "Recycled nylon shell, recycled polyester fill",
+    "care": "Machine wash cold on a gentle cycle. Tumble dry low with dryer balls.",
+    "availability": "Low stock. Olive is sold out in S.",
+    "gradient": ["#a7f3d0", "#6ee7b7"]
+  },
+  {
+    "id": "p08", "name": "Pleated Midi Skirt", "category": "Bottoms", "price": 72,
+    "description": "A flowing pleated skirt with an elastic back waist.",
+    "sizes": ["XS", "S", "M", "L", "XL"], "colors": ["Black", "Dusty Rose", "Sage"],
+    "materials": "100% recycled polyester",
+    "care": "Machine wash cold on a gentle cycle. Hang dry. Do not iron the pleats.",
+    "availability": "In stock in all sizes and colors.",
+    "gradient": ["#fbcfe8", "#fda4af"]
+  },
+  {
+    "id": "p09", "name": "Ribbed Knit Dress", "category": "Dresses", "price": 96,
+    "description": "A figure-skimming ribbed midi dress that works year-round.",
+    "sizes": ["XS", "S", "M", "L", "XL"], "colors": ["Black", "Camel", "Plum"],
+    "materials": "55% viscose, 28% nylon, 17% wool blend",
+    "care": "Hand wash cold. Dry flat. Cool iron if needed.",
+    "availability": "In stock. Plum is sold out in XL.",
+    "gradient": ["#c4b5fd", "#a78bfa"]
+  },
+  {
+    "id": "p10", "name": "Everyday Joggers", "category": "Bottoms", "price": 62,
+    "description": "Tapered joggers in a soft French terry with deep pockets.",
+    "sizes": ["S", "M", "L", "XL", "XXL"], "colors": ["Heather Grey", "Black", "Navy"],
+    "materials": "100% organic cotton French terry",
+    "care": "Machine wash cold. Tumble dry low.",
+    "availability": "In stock in all sizes and colors.",
+    "gradient": ["#cbd5e1", "#94a3b8"]
+  },
+  {
+    "id": "p11", "name": "Waxed Canvas Tote", "category": "Accessories", "price": 48,
+    "description": "A sturdy everyday tote with an interior zip pocket. One size fits all.",
+    "sizes": ["One size"], "colors": ["Tan", "Black"],
+    "materials": "Waxed cotton canvas with leather handles",
+    "care": "Spot clean with a damp cloth. Do not machine wash. Re-wax once a year to keep it water resistant.",
+    "availability": "In stock.",
+    "gradient": ["#fcd34d", "#f59e0b"]
+  },
+  {
+    "id": "p12", "name": "Merino Beanie", "category": "Accessories", "price": 29,
+    "description": "A ribbed, double-layer beanie that is itch-free and warm.",
+    "sizes": ["One size"], "colors": ["Ink", "Cream", "Burgundy"],
+    "materials": "100% merino wool",
+    "care": "Hand wash cold. Reshape and dry flat.",
+    "availability": "In stock.",
+    "gradient": ["#fda4af", "#c084fc"]
+  }
+]
